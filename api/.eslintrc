@@ -1,9 +1,6 @@
 {
   "extends": "loopback",
-  "parserOption": {
-      "ecmaVersion": 6
-  },
-  "rules": {
-      "semi": {"error", "never"}
+  "parserOptions": {
+    "ecmaVersion": 6
   }
 }

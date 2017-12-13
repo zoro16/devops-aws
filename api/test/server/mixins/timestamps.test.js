@@ -3,29 +3,41 @@
 const sinon = require('sinon')
 const expect = require('chai').expect
 const mixin = require('../../../server/mixins/timestamps.js')
+const utils = require('../../../server/mixins/utils')
 
 describe('Timestamps Mixin', () => {
-  it('should define a createdAt property', () => {
-      const Model = {
-          defineProperty: sinon.stub(),
-      }
-      mixin(Model)
-      expect(Model.defineProperty.calledWith('createdAt', {
-          type: Date,
-          default: '$now',
-      })).to.be.true
-  })
-  it('should define a updatedAt property', () => {
-      const Model = {
-          defineProperty: sinon.stub(),
-      }
-      mixin(Model)
-      expect(Model.defineProperty.calledWith('updatedAt', {
-          type: Date,
-          default: '$now',
-      })).to.be.true
-  })
+    let Model, updateTimestamps
 
-  it('should update instances updatedAt on a before save event')
-  it('should update requests updatedAt on a before save event')
+    beforeEach(() => {
+        Model = {
+            defineProperty: sinon.stub(),
+            observe: sinon.stub(),
+        }
+        updateTimestamps = sinon.stub(utils, 'updateTimestamps')
+    })
+
+    afterEach(() => {
+        updateTimestamps.restore()
+    })
+
+    it('should define a createdAt property', () => {
+        mixin(Model)
+        expect(Model.defineProperty.calledWith('createdAt', {
+            type: Date,
+            default: '$now',
+        })).to.be.true
+    })
+    it('should define a updatedAt property', () => {
+        mixin(Model)
+        expect(Model.defineProperty.calledWith('updatedAt', {
+            type: Date,
+            default: '$now',
+        })).to.be.true
+    })
+
+    it('should call to #utils.updateTimestamps `before save` hook', () => {
+        mixin(Model)
+        expect(Model.observe.calledWith('before save', updateTimestamps)).to.be.true
+    })
+
 })

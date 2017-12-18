@@ -9,5 +9,8 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {}
+  "methods": {},
+  "mixins": {
+    "Timestamps": true
+  }
 }

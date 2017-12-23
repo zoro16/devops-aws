@@ -39,5 +39,9 @@
   "Client": {
     "dataSource": "mysqlDB",
     "public": true
+  },
+  "Widget": {
+    "dataSource": "mysqlDB",
+    "public": true
   }
 }

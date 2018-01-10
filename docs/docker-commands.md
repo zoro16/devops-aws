@@ -9,4 +9,3 @@
 * `docker-compose exec <NAME OF SERVICE SPECIFIED IN DOCKER-COMPOSE FILE> <COMMAND INSIDE THAT SERVICE/IMAGE>`
 
 * `docker-compose down`
-

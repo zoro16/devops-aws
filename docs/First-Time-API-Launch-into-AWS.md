@@ -2,10 +2,10 @@
 
 
 ## Push our images to ECR
-  1.`$(aws ecr get-login --no-include-email --region ap-southeast-1)`
-  2.`docker build -t awsdevops/api .`
-  3.`docker tag awsdevops/api:latest 153153493606.dkr.ecr.ap-southeast-1.amazonaws.com/awsdevops/api:latest`
-  4.`docker push 153153493606.dkr.ecr.ap-southeast-1.amazonaws.com/awsdevops/api:latest`
+  * `$(aws ecr get-login --no-include-email --region ap-southeast-1)`
+  * `docker build -t awsdevops/api .`
+  * `docker tag awsdevops/api:latest 153153493606.dkr.ecr.ap-southeast-1.amazonaws.com/awsdevops/api:latest`
+  * `docker push 153153493606.dkr.ecr.ap-southeast-1.amazonaws.com/awsdevops/api:latest`
 
 ## Setting Up the API Task Definition
   * Go to `Elastic Container Service -> Task Definitions -> Create a Task Definition`

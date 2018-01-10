@@ -2,7 +2,7 @@ version: '2'
 
 services:
   api:
-    image: devops-aws/api
+    image: awsdevops/api-dev
     environment:
       NODE_ENV: development
     ports:
@@ -12,7 +12,7 @@ services:
     command: nodemon .
 
   mysqlDB:
-    image: devops-aws/mysql
+    image: awsdevops/mysql-dev
     environment:
       MYSQL_ROOT_PASSWORD: "${DB_ROOT}"
       MYSQL_DATABASE: "${DB_NAME}"

@@ -62,7 +62,6 @@ jobs:
   
 workflows:
   version: 2
-  # NAME OF OUR WORKFLOW
   install-test-deploy:
     jobs:
       - install

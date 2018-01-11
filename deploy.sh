@@ -13,7 +13,7 @@ function push_to_registry() {
     echo "pushing to registry"
 
     # BUILD DOWN NEW VESION OF IMAGE
-    docker build --rm=false -t $IMAGE
+    docker build --rm=false -t $IMAGE .
 
     # LOGIN TO ECR AS CircleCI
     eval $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)

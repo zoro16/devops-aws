@@ -26,7 +26,7 @@ function update_api_service() {
     echo "updating api service"
 
     # CREATE UPDATE TASK
-    node ./create-update-task.js
+    node ./create-updated-task.js
 
     # REGISTER THE NEW TASK DEFINITION WITH ECS
     aws ecs register-task-definition --cli-input-json file://update-task.json

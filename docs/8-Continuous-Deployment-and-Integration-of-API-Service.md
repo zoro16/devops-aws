@@ -86,5 +86,12 @@ h# Continuous Deployment and Integration of API Service
 
 ## Task Definition Template and Update Script 
     1. Create a base JSON file for Task Definitions with the defaults.
+       [here](https://github.com/zoro16/devops-aws/blob/master/task-definition.json)
     2. Create a new JSON file from the base JSON file with our environment variables (defined in CircleCI Environment Variables)
-    
+       [here](https://github.com/zoro16/devops-aws/blob/master/create-updated-task.js)
+
+## Creating the Build Shell Script and Deploying
+    * A shell build script
+      * build our docker image and push it to ECR
+      * create our new task definition
+      * call up to AWS through CLI and update our task definition and service.

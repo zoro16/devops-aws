@@ -37,7 +37,7 @@ function update_api_service() {
                            --task-definition $TASK_DEFINITION
 
     # REMOVE TEMP FILE
-    rm rf ./updated-task.json
+    rm -rf ./updated-task.json
 }
 
 function update_ecs() {

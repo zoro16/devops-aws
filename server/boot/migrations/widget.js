@@ -3,7 +3,7 @@
 const path = require('path')
 const model = 'Widget'
 
-module.exports = function migrateAccountModels (app, next) {
+module.exports = function migrateAccountModels(app, next) {
     const mysql = app.dataSources.mysqlDB
     mysql.isActual(model, (err, actual) => {
         if (err) {

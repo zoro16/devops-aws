@@ -3,7 +3,7 @@
 const path = require('path')
 const models = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role']
 
-module.exports = function migrateBaseModels (app, next) {
+module.exports = function migrateBaseModels(app, next) {
     const mysql = app.dataSources.mysqlDB
     mysql.isActual(models, (err, actual) => {
         if (err) {

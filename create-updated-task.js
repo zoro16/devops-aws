@@ -21,26 +21,25 @@ updatedTask.containerDefinitions[0].image = image;
 updatedTask.containerDefinitions[0].environment = [
     {
         'name': 'PRODUCTION_RDS_HOST',
-        'value': 'process.env.PRODUCTION_RDS_HOST'
+        'value': process.env.PRODUCTION_RDS_HOST,
     },
     {
         'name': 'PRODUCTION_RDS_DB',
-        'value': 'process.env.PRODUCTION_RDS_DB'
+        'value': process.env.PRODUCTION_RDS_DB,
     },
     {
         'name': 'PRODUCTION_RDS_USER',
-        'value': 'process.env.PRODUCTION_RDS_USER'
+        'value': process.env.PRODUCTION_RDS_USER,
     },
     {
         'name': 'PRODUCTION_RDS_PWD',
-        'value': 'process.env.PRODUCTION_RDS_PWD'
+        'value': process.env.PRODUCTION_RDS_PWD,
     },
     {
         'name': 'NODE_ENV',
-        'value': 'production'
+        'value': 'production',
     },
-];
-
+]
 
 // SET LOGS
 updatedTask.containerDefinitions[0].logConfiguration.options = {

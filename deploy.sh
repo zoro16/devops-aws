@@ -29,7 +29,7 @@ function update_api_service() {
     node ./create-updated-task.js
 
     # REGISTER THE NEW TASK DEFINITION WITH ECS
-    aws ecs register-task-definition --cli-input-json file://update-task.json
+    aws ecs register-task-definition --cli-input-json file://updated-task.json
 
     # UPDATE THE SERVICE, IN OUR CLUSTER, WITH THE NEW TASK DEFINITION
     aws ecs update-service --cluster $CLUSTER \
@@ -37,7 +37,7 @@ function update_api_service() {
                            --task-definition $TASK_DEFINITION
 
     # REMOVE TEMP FILE
-    rm rf ./update-task.json
+    rm rf ./updated-task.json
 }
 
 function update_ecs() {

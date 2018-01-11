@@ -66,7 +66,7 @@
   ```
 
 
-## Lunch MYSQL RDS Instance
+## Launch MYSQL RDS Instance
 
 * We need to enable two things from VPC first
   * `From VPC -> Your VPCs -> Select vpcity -> Actions -> Edit DNS Resolution -> make sure its selected to (Yes)`

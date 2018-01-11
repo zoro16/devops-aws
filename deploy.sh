@@ -45,5 +45,4 @@ function update_ecs() {
     update_api_service
 }
 
-
 update_ecs

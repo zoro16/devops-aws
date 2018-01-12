@@ -12,12 +12,12 @@
   * Autoscaling Process
     1. Setup CloudWatch alarm to watch `Service CPU Utilization`
     2. Set alarm to trigger if Service CPU Utilization goes over 70%
-    3. If alarm if triggered, tell our ECS service
+    3. If alarm is triggered, tell our ECS service
     4. When our service is notified of the alarm, tell it to add more Tasks to our Service.
   * Automating Anything in AWS
     1. Pick a Metric to Watch
     2. Set a threshold
-    3. If alarm triggers, perform an action
+    3. If alarm is triggered, perform an action
   * Service Memory Reservation and Utilization
     * Total Service Memory Reservation = Number of Tasks * Memory Reserved By Each Task
     * Service Memory Utilization = Memory Utilized by Total Tasks / Memory Reserved by Total Tasks

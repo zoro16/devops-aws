@@ -1,4 +1,4 @@
-version: '2'
+version: '3.5'
 
 services:
   api:
@@ -13,6 +13,7 @@ services:
 
   mysqlDB:
     image: awsdevops/mysql-dev
+    env_file: .env
     environment:
       MYSQL_ROOT_PASSWORD: "${DB_ROOT}"
       MYSQL_DATABASE: "${DB_NAME}"

@@ -1,0 +1,38 @@
+version: '3.5'
+
+services:
+  web:
+    environment:
+      NODE_ENV: development
+    image: awsdevops/web-dev
+    ports:
+      - 3001:3000  # map our machines port 3001 with port 3000 in the container
+    volumes:
+      - .:/usr/src/web
+    command: yarn start
+  api:
+    image: awsdevops/api-dev
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3002:3000  # map our machines port 3002 with port 3000 in the container
+    volumes:
+      - $API_ROOT:/usr/src/api
+    command: nodemon .
+
+  mysqlDB:
+    image: awsdevops/mysql-dev
+    env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PWD}"
+    ports:
+      - 3306:3306
+    volumes:
+      - ${DB_VOLUME}:/var/lib/mysql
+
+
+# TO INSTALL DEPENDNCIES IN DOCKER IMAGE
+# docker-compose run web yarn

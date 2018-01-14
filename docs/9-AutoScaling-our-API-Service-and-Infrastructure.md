@@ -26,7 +26,7 @@
     * As Services Add Tasks, Add Container Instances to Match
     * As Services Remove Tasks, Remove Container Instances to Match
 
-* AutoScaling ECS Services
+## AutoScaling ECS Services
   * We will setup the Autoscaling in way that it will scale Up and Down based on the CPU Utilization
     * Go to `ECS ->  Clusters -> Click on the you created Service Name ->`
     * `Update -> Next step -> Next step -> Configure Service Auto Scaling to adjust your service’s desired count`
@@ -55,21 +55,21 @@
       * `ulimit -n 10000`
       * example `ab -n 10000 -c 500 http://vpcity-alb-1049916510.ap-southeast-1.elb.amazonaws.com/`
 
-* AutoScaling ECS Container Instances
+## AutoScaling ECS Container Instances
   * We are going to make 4 Alarms in CloudWatch
     a. CPU Utilization Above the threshold
     b. CPU Reservation Above the threshold
     c. CPU Utilization Below the threshold
     d. CPU Reservation Below the threshold
 
-  1. CPU Reservation Above the threshold
-     * From CloudWatch `Alarms -> Create Alarm -> ClusterName`
-     * Select `our ClusterName with CPUResevation -> Next`
-     * Give a verbose name and description
-     * set the thershold
-     * click create
+  --1. CPU Reservation Above the threshold
+     1. From CloudWatch `Alarms -> Create Alarm -> ClusterName`
+     2. Select `our ClusterName with CPUResevation -> Next`
+     3. Give a verbose name and description
+     4. set the thershold
+     5. click create
      
-  * Repeat #1 for b,c, and d
+  * Repeat #1 for b,c, and d `CloudWatch Alarms`
   
   * Now head to `EC2 -> Auto Scaling Groups`
   * Select our Auto Scaling Group `vpcity-api-autoscaling-group`

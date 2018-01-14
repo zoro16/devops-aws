@@ -62,7 +62,7 @@
     c. CPU Utilization Below the threshold
     d. CPU Reservation Below the threshold
 
-  --1. CPU Reservation Above the threshold
+  * CPU Reservation Above the threshold
      1. From CloudWatch `Alarms -> Create Alarm -> ClusterName`
      2. Select `our ClusterName with CPUResevation -> Next`
      3. Give a verbose name and description

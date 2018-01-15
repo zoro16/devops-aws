@@ -13,7 +13,7 @@ services:
 
   mysqlDB:
     image: awsdevops/mysql-dev
-    env_file: .env
+    # env_file: .env
     environment:
       MYSQL_ROOT_PASSWORD: "${DB_ROOT}"
       MYSQL_DATABASE: "${DB_NAME}"
@@ -22,7 +22,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ../dev-db:/var/lib/mysql
+      - ./dev-db:/var/lib/mysql
 
 
 # docker-compose run api slc loopback

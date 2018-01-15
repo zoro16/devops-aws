@@ -1,0 +1,44 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Cross Region Scalable, ECS Cloud Formation Template",
+  "Metadata": {
+    "Author": {"name": "Mohamed Abdelgadir"}
+  },
+  "Parameters": {
+    "WebTaskImage": {
+      "Type": "String",
+      "Description": "Url of the Docker Image to deplay"
+    }
+  },
+  "Mappings": {
+    "AWSRegionECSAMI": {
+      "us-east-2": {"ID": "ami-13af8476"},
+      "us-east-1": {"ID": "ami-ba722dc0"},
+      "us-west-2": {"ID": "ami-c9c87cb1"},
+      "us-west-1": {"ID": "ami-9df0f0fd"},
+      "eu-west-3": {"ID": "ami-5e02b523"},
+      "eu-west-2": {"ID": "ami-4d809829"},
+      "eu-west-1": {"ID": "ami-acb020d5"},
+      "eu-central-1": {"ID": "ami-eacf5d85"},
+      "ap-northeast-2": {"ID": "ami-59b71737"},
+      "ap-northeast-1": {"ID": "ami-72f36a14"},
+      "ap-southeast-2": {"ID": "ami-7aa15c18"},
+      "ap-southeast-1": {"ID": "ami-e782f29b"},
+      "ca-central-1": {"ID": "ami-9afc79fe"},
+      "ap-south-1": {"ID": "ami-f4db8f9b"},
+      "sa-east-1": {"ID": "ami-49256725"}
+    }
+  },
+  "Conditions": {},
+  "Resources": {
+    "WebCluster": {
+      "Type": "AWS::ECS::Cluster"
+    }
+  },
+  "Outputs": {
+    "EcsCluster": {
+      "Description": "The Name of our newly created cluster",
+      "Value": {"Ref": "WebCluster"}
+    }
+  }
+}

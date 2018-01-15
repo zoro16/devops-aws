@@ -31,7 +31,7 @@
     "eject": "react-scripts eject",
     "coverage": "react-scripts test --env=jsdom --coverage --collectCoverageFrom='[\"src/**/*.{js,jsx}\"]'; rm -rf .nyc_output; mv coverage .nyc_output;",
     "coverage:check": "nyc check-coverage --statements 90 --functions 90 --branches 90 --lines 90",
-    "coverage:report": "open ./.nyc_output/lcov-report/index.html"
+    "coverage:report": "firefox ./.nyc_output/lcov-report/index.html"
   },
   "eslintConfig": {
     "parser": "babel-eslint",

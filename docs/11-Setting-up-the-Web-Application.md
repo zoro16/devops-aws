@@ -43,3 +43,23 @@
       "jest": true
     },
     ```
+  * look at `widgets/index.js` and `widgets/index.test.js`
+
+
+## Unit Testing The Front End
+  * Do the Snapshot testing first, then look of the parts that has not been covered yet and Unit test them.
+  * Its not a bad idea to wait until is super clear whats the app is suppose to do to start testing the frontend, since it can be really complicated. But try to make sure that the code is clean enough and not nested.
+
+
+## Build and Deploy the FrontEnd Docker Image
+  * Overview
+    1. Compile/Build our React App into its minified html/css/js
+    2. Build a Docker Image using NGINX
+    3. Copy the Compiled app over into the Docker Image
+    4. Setup NGINX to serve static resources over specifed port
+    5. Deploy the Docker Image to ECS
+
+  * `touch web/nginx.conf web/default.conf` see the code
+  * `touch web/Dockerfile` see the code
+  * `docker build -t awsdevops/web`
+  * `docker run --name test -d -p 8080:80 awsdevops/web` then check on the browser at `localhost:8080/`

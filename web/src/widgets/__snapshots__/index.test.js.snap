@@ -1,0 +1,2709 @@
+exports[`Widgets Class Component #renderNameInput() should render an input with all properties 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div>
+    <input
+        test="property"
+        type="text" />
+</div>,
+  "nodes": Array [
+    <div>
+      <input
+            test="property"
+            type="text" />
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": null,
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <div>
+    <input
+        test="property"
+        type="text" />
+</div>,
+}
+`;
+
+exports[`Widgets Class Component #renderNameInput() should render the error message if both touched and error 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div>
+    <input
+        test="property"
+        type="text" />
+    <div
+        style={
+            Object {
+                "color": "#cc7a6f",
+                "fontSize": "0.7rem",
+                "margin": "-10px 0 15px",
+              }
+        }>
+        error
+    </div>
+</div>,
+  "nodes": Array [
+    <div>
+      <input
+            test="property"
+            type="text" />
+      <div
+            style={
+                  Object {
+                        "color": "#cc7a6f",
+                        "fontSize": "0.7rem",
+                        "margin": "-10px 0 15px",
+                      }
+            }>
+            error
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": null,
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <div>
+    <input
+        test="property"
+        type="text" />
+    <div
+        style={
+            Object {
+                "color": "#cc7a6f",
+                "fontSize": "0.7rem",
+                "margin": "-10px 0 15px",
+              }
+        }>
+        error
+    </div>
+</div>,
+}
+`;
+
+exports[`Widgets Class Component should render all base children 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="widgets">
+    <div
+        className="widget-form">
+        <form
+            onSubmit={undefined}>
+            <h1>
+                CREATE THE WIDGET
+            </h1>
+            <label
+                htmlFor="name">
+                Name
+            </label>
+            <Field
+                className="name"
+                component={[Function]}
+                id="name"
+                name="name"
+                type="text"
+                validate={[Function]} />
+            <label
+                htmlFor="description">
+                Description
+            </label>
+            <Field
+                className="description"
+                component="input"
+                id="description"
+                name="description"
+                type="text" />
+            <label
+                htmlFor="size">
+                Size
+            </label>
+            <Field
+                className="number"
+                component="input"
+                id="size"
+                name="size"
+                type="number" />
+            <button
+                action="submit"
+                disabled={false}>
+                CREATE
+            </button>
+        </form>
+        <hr />
+        <div
+            className="widget-messages">
+            
+        </div>
+    </div>
+    <div
+        className="widget-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Size
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>
+                            test widget
+                        </strong>
+                    </td>
+                    <td>
+                        test
+                    </td>
+                    <td>
+                        1
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button
+            onClick={[Function]}>
+            Refetch Widgets!
+        </button>
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="widgets">
+      <div
+            className="widget-form">
+            <form
+                  onSubmit={undefined}>
+                  <h1>
+                        CREATE THE WIDGET
+                  </h1>
+                  <label
+                        htmlFor="name">
+                        Name
+                  </label>
+                  <Field
+                        className="name"
+                        component={[Function]}
+                        id="name"
+                        name="name"
+                        type="text"
+                        validate={[Function]} />
+                  <label
+                        htmlFor="description">
+                        Description
+                  </label>
+                  <Field
+                        className="description"
+                        component="input"
+                        id="description"
+                        name="description"
+                        type="text" />
+                  <label
+                        htmlFor="size">
+                        Size
+                  </label>
+                  <Field
+                        className="number"
+                        component="input"
+                        id="size"
+                        name="size"
+                        type="number" />
+                  <button
+                        action="submit"
+                        disabled={false}>
+                        CREATE
+                  </button>
+            </form>
+            <hr />
+            <div
+                  className="widget-messages">
+                  
+            </div>
+      </div>
+      <div
+            className="widget-list">
+            <table>
+                  <thead>
+                        <tr>
+                              <th>
+                                    Name
+                              </th>
+                              <th>
+                                    Description
+                              </th>
+                              <th>
+                                    Size
+                              </th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>
+                                    <strong>
+                                          test widget
+                                    </strong>
+                              </td>
+                              <td>
+                                    test
+                              </td>
+                              <td>
+                                    1
+                              </td>
+                        </tr>
+                  </tbody>
+            </table>
+            <button
+                  onClick={[Function]}>
+                  Refetch Widgets!
+            </button>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Widgets
+        client={
+                Object {
+                        "id": "test",
+                        "token": Object {
+                          "test": "token",
+                        },
+                      }
+        }
+        handleSubmit={[Function]}
+        invalid={false}
+        reset={[Function]}
+        widgetCreate={[Function]}
+        widgetRequest={[Function]}
+        widgets={
+                Object {
+                        "errors": Array [],
+                        "list": Array [
+                          Object {
+                            "description": "test",
+                            "id": "123abc",
+                            "name": "test widget",
+                            "size": 1,
+                          },
+                        ],
+                        "messages": Array [],
+                        "requesting": false,
+                        "successful": false,
+                      }
+        } />,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Widgets {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "fetchWidgets": [Function],
+        "nameRequired": [Function],
+        "props": Object {
+          "client": Object {
+            "id": "test",
+            "token": Object {
+              "test": "token",
+            },
+          },
+          "handleSubmit": [Function],
+          "invalid": false,
+          "reset": [Function],
+          "widgetCreate": [Function],
+          "widgetRequest": [Function],
+          "widgets": Object {
+            "errors": Array [],
+            "list": Array [
+              Object {
+                "description": "test",
+                "id": "123abc",
+                "name": "test widget",
+                "size": 1,
+              },
+            ],
+            "messages": Array [],
+            "requesting": false,
+            "successful": false,
+          },
+        },
+        "refs": Object {},
+        "renderNameInput": [Function],
+        "state": null,
+        "submit": [Function],
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="widgets">
+          <div
+                    className="widget-form">
+                    <form
+                              onSubmit={undefined}>
+                              <h1>
+                                        CREATE THE WIDGET
+                              </h1>
+                              <label
+                                        htmlFor="name">
+                                        Name
+                              </label>
+                              <Field
+                                        className="name"
+                                        component={[Function]}
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        validate={[Function]} />
+                              <label
+                                        htmlFor="description">
+                                        Description
+                              </label>
+                              <Field
+                                        className="description"
+                                        component="input"
+                                        id="description"
+                                        name="description"
+                                        type="text" />
+                              <label
+                                        htmlFor="size">
+                                        Size
+                              </label>
+                              <Field
+                                        className="number"
+                                        component="input"
+                                        id="size"
+                                        name="size"
+                                        type="number" />
+                              <button
+                                        action="submit"
+                                        disabled={false}>
+                                        CREATE
+                              </button>
+                    </form>
+                    <hr />
+                    <div
+                              className="widget-messages">
+                              
+                    </div>
+          </div>
+          <div
+                    className="widget-list">
+                    <table>
+                              <thead>
+                                        <tr>
+                                                  <th>
+                                                            Name
+                                                  </th>
+                                                  <th>
+                                                            Description
+                                                  </th>
+                                                  <th>
+                                                            Size
+                                                  </th>
+                                        </tr>
+                              </thead>
+                              <tbody>
+                                        <tr>
+                                                  <td>
+                                                            <strong>
+                                                                      test widget
+                                                            </strong>
+                                                  </td>
+                                                  <td>
+                                                            test
+                                                  </td>
+                                                  <td>
+                                                            1
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+                    <button
+                              onClick={[Function]}>
+                              Refetch Widgets!
+                    </button>
+          </div>
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div
+          className="widgets">
+          <div
+                    className="widget-form">
+                    <form
+                              onSubmit={undefined}>
+                              <h1>
+                                        CREATE THE WIDGET
+                              </h1>
+                              <label
+                                        htmlFor="name">
+                                        Name
+                              </label>
+                              <Field
+                                        className="name"
+                                        component={[Function]}
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        validate={[Function]} />
+                              <label
+                                        htmlFor="description">
+                                        Description
+                              </label>
+                              <Field
+                                        className="description"
+                                        component="input"
+                                        id="description"
+                                        name="description"
+                                        type="text" />
+                              <label
+                                        htmlFor="size">
+                                        Size
+                              </label>
+                              <Field
+                                        className="number"
+                                        component="input"
+                                        id="size"
+                                        name="size"
+                                        type="number" />
+                              <button
+                                        action="submit"
+                                        disabled={false}>
+                                        CREATE
+                              </button>
+                    </form>
+                    <hr />
+                    <div
+                              className="widget-messages">
+                              
+                    </div>
+          </div>
+          <div
+                    className="widget-list">
+                    <table>
+                              <thead>
+                                        <tr>
+                                                  <th>
+                                                            Name
+                                                  </th>
+                                                  <th>
+                                                            Description
+                                                  </th>
+                                                  <th>
+                                                            Size
+                                                  </th>
+                                        </tr>
+                              </thead>
+                              <tbody>
+                                        <tr>
+                                                  <td>
+                                                            <strong>
+                                                                      test widget
+                                                            </strong>
+                                                  </td>
+                                                  <td>
+                                                            test
+                                                  </td>
+                                                  <td>
+                                                            1
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+                    <button
+                              onClick={[Function]}>
+                              Refetch Widgets!
+                    </button>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Widgets
+    client={
+        Object {
+            "id": "test",
+            "token": Object {
+              "test": "token",
+            },
+          }
+    }
+    handleSubmit={[Function]}
+    invalid={false}
+    reset={[Function]}
+    widgetCreate={[Function]}
+    widgetRequest={[Function]}
+    widgets={
+        Object {
+            "errors": Array [],
+            "list": Array [
+              Object {
+                "description": "test",
+                "id": "123abc",
+                "name": "test widget",
+                "size": 1,
+              },
+            ],
+            "messages": Array [],
+            "requesting": false,
+            "successful": false,
+          }
+    } />,
+}
+`;
+
+exports[`Widgets Class Component should render error messages if present 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="widgets">
+    <div
+        className="widget-form">
+        <form
+            onSubmit={undefined}>
+            <h1>
+                CREATE THE WIDGET
+            </h1>
+            <label
+                htmlFor="name">
+                Name
+            </label>
+            <Field
+                className="name"
+                component={[Function]}
+                id="name"
+                name="name"
+                type="text"
+                validate={[Function]} />
+            <label
+                htmlFor="description">
+                Description
+            </label>
+            <Field
+                className="description"
+                component="input"
+                id="description"
+                name="description"
+                type="text" />
+            <label
+                htmlFor="size">
+                Size
+            </label>
+            <Field
+                className="number"
+                component="input"
+                id="size"
+                name="size"
+                type="number" />
+            <button
+                action="submit"
+                disabled={false}>
+                CREATE
+            </button>
+        </form>
+        <hr />
+        <div
+            className="widget-messages">
+            <Errors
+                errors={
+                    Array [
+                        Object {
+                          "test": "error",
+                        },
+                      ]
+                }
+                message="Failure to create Widget due to:" />
+        </div>
+    </div>
+    <div
+        className="widget-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Size
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>
+                            test widget
+                        </strong>
+                    </td>
+                    <td>
+                        test
+                    </td>
+                    <td>
+                        1
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button
+            onClick={[Function]}>
+            Refetch Widgets!
+        </button>
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="widgets">
+      <div
+            className="widget-form">
+            <form
+                  onSubmit={undefined}>
+                  <h1>
+                        CREATE THE WIDGET
+                  </h1>
+                  <label
+                        htmlFor="name">
+                        Name
+                  </label>
+                  <Field
+                        className="name"
+                        component={[Function]}
+                        id="name"
+                        name="name"
+                        type="text"
+                        validate={[Function]} />
+                  <label
+                        htmlFor="description">
+                        Description
+                  </label>
+                  <Field
+                        className="description"
+                        component="input"
+                        id="description"
+                        name="description"
+                        type="text" />
+                  <label
+                        htmlFor="size">
+                        Size
+                  </label>
+                  <Field
+                        className="number"
+                        component="input"
+                        id="size"
+                        name="size"
+                        type="number" />
+                  <button
+                        action="submit"
+                        disabled={false}>
+                        CREATE
+                  </button>
+            </form>
+            <hr />
+            <div
+                  className="widget-messages">
+                  <Errors
+                        errors={
+                              Array [
+                                    Object {
+                                      "test": "error",
+                                    },
+                                  ]
+                        }
+                        message="Failure to create Widget due to:" />
+            </div>
+      </div>
+      <div
+            className="widget-list">
+            <table>
+                  <thead>
+                        <tr>
+                              <th>
+                                    Name
+                              </th>
+                              <th>
+                                    Description
+                              </th>
+                              <th>
+                                    Size
+                              </th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>
+                                    <strong>
+                                          test widget
+                                    </strong>
+                              </td>
+                              <td>
+                                    test
+                              </td>
+                              <td>
+                                    1
+                              </td>
+                        </tr>
+                  </tbody>
+            </table>
+            <button
+                  onClick={[Function]}>
+                  Refetch Widgets!
+            </button>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Widgets
+        client={
+                Object {
+                        "id": "test",
+                        "token": Object {
+                          "test": "token",
+                        },
+                      }
+        }
+        handleSubmit={[Function]}
+        invalid={false}
+        reset={[Function]}
+        widgetCreate={[Function]}
+        widgetRequest={[Function]}
+        widgets={
+                Object {
+                        "errors": Array [
+                          Object {
+                            "test": "error",
+                          },
+                        ],
+                        "list": Array [
+                          Object {
+                            "description": "test",
+                            "id": "123abc",
+                            "name": "test widget",
+                            "size": 1,
+                          },
+                        ],
+                        "messages": Array [],
+                        "requesting": false,
+                        "successful": false,
+                      }
+        } />,
+      "_debugID": 5,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Widgets {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "fetchWidgets": [Function],
+        "nameRequired": [Function],
+        "props": Object {
+          "client": Object {
+            "id": "test",
+            "token": Object {
+              "test": "token",
+            },
+          },
+          "handleSubmit": [Function],
+          "invalid": false,
+          "reset": [Function],
+          "widgetCreate": [Function],
+          "widgetRequest": [Function],
+          "widgets": Object {
+            "errors": Array [
+              Object {
+                "test": "error",
+              },
+            ],
+            "list": Array [
+              Object {
+                "description": "test",
+                "id": "123abc",
+                "name": "test widget",
+                "size": 1,
+              },
+            ],
+            "messages": Array [],
+            "requesting": false,
+            "successful": false,
+          },
+        },
+        "refs": Object {},
+        "renderNameInput": [Function],
+        "state": null,
+        "submit": [Function],
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 3,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="widgets">
+          <div
+                    className="widget-form">
+                    <form
+                              onSubmit={undefined}>
+                              <h1>
+                                        CREATE THE WIDGET
+                              </h1>
+                              <label
+                                        htmlFor="name">
+                                        Name
+                              </label>
+                              <Field
+                                        className="name"
+                                        component={[Function]}
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        validate={[Function]} />
+                              <label
+                                        htmlFor="description">
+                                        Description
+                              </label>
+                              <Field
+                                        className="description"
+                                        component="input"
+                                        id="description"
+                                        name="description"
+                                        type="text" />
+                              <label
+                                        htmlFor="size">
+                                        Size
+                              </label>
+                              <Field
+                                        className="number"
+                                        component="input"
+                                        id="size"
+                                        name="size"
+                                        type="number" />
+                              <button
+                                        action="submit"
+                                        disabled={false}>
+                                        CREATE
+                              </button>
+                    </form>
+                    <hr />
+                    <div
+                              className="widget-messages">
+                              <Errors
+                                        errors={
+                                                  Array [
+                                                            Object {
+                                                              "test": "error",
+                                                            },
+                                                          ]
+                                        }
+                                        message="Failure to create Widget due to:" />
+                    </div>
+          </div>
+          <div
+                    className="widget-list">
+                    <table>
+                              <thead>
+                                        <tr>
+                                                  <th>
+                                                            Name
+                                                  </th>
+                                                  <th>
+                                                            Description
+                                                  </th>
+                                                  <th>
+                                                            Size
+                                                  </th>
+                                        </tr>
+                              </thead>
+                              <tbody>
+                                        <tr>
+                                                  <td>
+                                                            <strong>
+                                                                      test widget
+                                                            </strong>
+                                                  </td>
+                                                  <td>
+                                                            test
+                                                  </td>
+                                                  <td>
+                                                            1
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+                    <button
+                              onClick={[Function]}>
+                              Refetch Widgets!
+                    </button>
+          </div>
+</div>,
+        "_debugID": 6,
+        "_renderedOutput": <div
+          className="widgets">
+          <div
+                    className="widget-form">
+                    <form
+                              onSubmit={undefined}>
+                              <h1>
+                                        CREATE THE WIDGET
+                              </h1>
+                              <label
+                                        htmlFor="name">
+                                        Name
+                              </label>
+                              <Field
+                                        className="name"
+                                        component={[Function]}
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        validate={[Function]} />
+                              <label
+                                        htmlFor="description">
+                                        Description
+                              </label>
+                              <Field
+                                        className="description"
+                                        component="input"
+                                        id="description"
+                                        name="description"
+                                        type="text" />
+                              <label
+                                        htmlFor="size">
+                                        Size
+                              </label>
+                              <Field
+                                        className="number"
+                                        component="input"
+                                        id="size"
+                                        name="size"
+                                        type="number" />
+                              <button
+                                        action="submit"
+                                        disabled={false}>
+                                        CREATE
+                              </button>
+                    </form>
+                    <hr />
+                    <div
+                              className="widget-messages">
+                              <Errors
+                                        errors={
+                                                  Array [
+                                                            Object {
+                                                              "test": "error",
+                                                            },
+                                                          ]
+                                        }
+                                        message="Failure to create Widget due to:" />
+                    </div>
+          </div>
+          <div
+                    className="widget-list">
+                    <table>
+                              <thead>
+                                        <tr>
+                                                  <th>
+                                                            Name
+                                                  </th>
+                                                  <th>
+                                                            Description
+                                                  </th>
+                                                  <th>
+                                                            Size
+                                                  </th>
+                                        </tr>
+                              </thead>
+                              <tbody>
+                                        <tr>
+                                                  <td>
+                                                            <strong>
+                                                                      test widget
+                                                            </strong>
+                                                  </td>
+                                                  <td>
+                                                            test
+                                                  </td>
+                                                  <td>
+                                                            1
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+                    <button
+                              onClick={[Function]}>
+                              Refetch Widgets!
+                    </button>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Widgets
+    client={
+        Object {
+            "id": "test",
+            "token": Object {
+              "test": "token",
+            },
+          }
+    }
+    handleSubmit={[Function]}
+    invalid={false}
+    reset={[Function]}
+    widgetCreate={[Function]}
+    widgetRequest={[Function]}
+    widgets={
+        Object {
+            "errors": Array [
+              Object {
+                "test": "error",
+              },
+            ],
+            "list": Array [
+              Object {
+                "description": "test",
+                "id": "123abc",
+                "name": "test widget",
+                "size": 1,
+              },
+            ],
+            "messages": Array [],
+            "requesting": false,
+            "successful": false,
+          }
+    } />,
+}
+`;
+
+exports[`Widgets Class Component should render messages if successful and if messages are present 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="widgets">
+    <div
+        className="widget-form">
+        <form
+            onSubmit={undefined}>
+            <h1>
+                CREATE THE WIDGET
+            </h1>
+            <label
+                htmlFor="name">
+                Name
+            </label>
+            <Field
+                className="name"
+                component={[Function]}
+                id="name"
+                name="name"
+                type="text"
+                validate={[Function]} />
+            <label
+                htmlFor="description">
+                Description
+            </label>
+            <Field
+                className="description"
+                component="input"
+                id="description"
+                name="description"
+                type="text" />
+            <label
+                htmlFor="size">
+                Size
+            </label>
+            <Field
+                className="number"
+                component="input"
+                id="size"
+                name="size"
+                type="number" />
+            <button
+                action="submit"
+                disabled={false}>
+                CREATE
+            </button>
+        </form>
+        <hr />
+        <div
+            className="widget-messages">
+            <Messages
+                messages={
+                    Array [
+                        Object {
+                          "test": "success message",
+                        },
+                      ]
+                } />
+        </div>
+    </div>
+    <div
+        className="widget-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Size
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>
+                            test widget
+                        </strong>
+                    </td>
+                    <td>
+                        test
+                    </td>
+                    <td>
+                        1
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button
+            onClick={[Function]}>
+            Refetch Widgets!
+        </button>
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="widgets">
+      <div
+            className="widget-form">
+            <form
+                  onSubmit={undefined}>
+                  <h1>
+                        CREATE THE WIDGET
+                  </h1>
+                  <label
+                        htmlFor="name">
+                        Name
+                  </label>
+                  <Field
+                        className="name"
+                        component={[Function]}
+                        id="name"
+                        name="name"
+                        type="text"
+                        validate={[Function]} />
+                  <label
+                        htmlFor="description">
+                        Description
+                  </label>
+                  <Field
+                        className="description"
+                        component="input"
+                        id="description"
+                        name="description"
+                        type="text" />
+                  <label
+                        htmlFor="size">
+                        Size
+                  </label>
+                  <Field
+                        className="number"
+                        component="input"
+                        id="size"
+                        name="size"
+                        type="number" />
+                  <button
+                        action="submit"
+                        disabled={false}>
+                        CREATE
+                  </button>
+            </form>
+            <hr />
+            <div
+                  className="widget-messages">
+                  <Messages
+                        messages={
+                              Array [
+                                    Object {
+                                      "test": "success message",
+                                    },
+                                  ]
+                        } />
+            </div>
+      </div>
+      <div
+            className="widget-list">
+            <table>
+                  <thead>
+                        <tr>
+                              <th>
+                                    Name
+                              </th>
+                              <th>
+                                    Description
+                              </th>
+                              <th>
+                                    Size
+                              </th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>
+                                    <strong>
+                                          test widget
+                                    </strong>
+                              </td>
+                              <td>
+                                    test
+                              </td>
+                              <td>
+                                    1
+                              </td>
+                        </tr>
+                  </tbody>
+            </table>
+            <button
+                  onClick={[Function]}>
+                  Refetch Widgets!
+            </button>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Widgets
+        client={
+                Object {
+                        "id": "test",
+                        "token": Object {
+                          "test": "token",
+                        },
+                      }
+        }
+        handleSubmit={[Function]}
+        invalid={false}
+        reset={[Function]}
+        widgetCreate={[Function]}
+        widgetRequest={[Function]}
+        widgets={
+                Object {
+                        "errors": Array [],
+                        "list": Array [
+                          Object {
+                            "description": "test",
+                            "id": "123abc",
+                            "name": "test widget",
+                            "size": 1,
+                          },
+                        ],
+                        "messages": Array [
+                          Object {
+                            "test": "success message",
+                          },
+                        ],
+                        "requesting": false,
+                        "successful": true,
+                      }
+        } />,
+      "_debugID": 7,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Widgets {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "fetchWidgets": [Function],
+        "nameRequired": [Function],
+        "props": Object {
+          "client": Object {
+            "id": "test",
+            "token": Object {
+              "test": "token",
+            },
+          },
+          "handleSubmit": [Function],
+          "invalid": false,
+          "reset": [Function],
+          "widgetCreate": [Function],
+          "widgetRequest": [Function],
+          "widgets": Object {
+            "errors": Array [],
+            "list": Array [
+              Object {
+                "description": "test",
+                "id": "123abc",
+                "name": "test widget",
+                "size": 1,
+              },
+            ],
+            "messages": Array [
+              Object {
+                "test": "success message",
+              },
+            ],
+            "requesting": false,
+            "successful": true,
+          },
+        },
+        "refs": Object {},
+        "renderNameInput": [Function],
+        "state": null,
+        "submit": [Function],
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 4,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="widgets">
+          <div
+                    className="widget-form">
+                    <form
+                              onSubmit={undefined}>
+                              <h1>
+                                        CREATE THE WIDGET
+                              </h1>
+                              <label
+                                        htmlFor="name">
+                                        Name
+                              </label>
+                              <Field
+                                        className="name"
+                                        component={[Function]}
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        validate={[Function]} />
+                              <label
+                                        htmlFor="description">
+                                        Description
+                              </label>
+                              <Field
+                                        className="description"
+                                        component="input"
+                                        id="description"
+                                        name="description"
+                                        type="text" />
+                              <label
+                                        htmlFor="size">
+                                        Size
+                              </label>
+                              <Field
+                                        className="number"
+                                        component="input"
+                                        id="size"
+                                        name="size"
+                                        type="number" />
+                              <button
+                                        action="submit"
+                                        disabled={false}>
+                                        CREATE
+                              </button>
+                    </form>
+                    <hr />
+                    <div
+                              className="widget-messages">
+                              <Messages
+                                        messages={
+                                                  Array [
+                                                            Object {
+                                                              "test": "success message",
+                                                            },
+                                                          ]
+                                        } />
+                    </div>
+          </div>
+          <div
+                    className="widget-list">
+                    <table>
+                              <thead>
+                                        <tr>
+                                                  <th>
+                                                            Name
+                                                  </th>
+                                                  <th>
+                                                            Description
+                                                  </th>
+                                                  <th>
+                                                            Size
+                                                  </th>
+                                        </tr>
+                              </thead>
+                              <tbody>
+                                        <tr>
+                                                  <td>
+                                                            <strong>
+                                                                      test widget
+                                                            </strong>
+                                                  </td>
+                                                  <td>
+                                                            test
+                                                  </td>
+                                                  <td>
+                                                            1
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+                    <button
+                              onClick={[Function]}>
+                              Refetch Widgets!
+                    </button>
+          </div>
+</div>,
+        "_debugID": 8,
+        "_renderedOutput": <div
+          className="widgets">
+          <div
+                    className="widget-form">
+                    <form
+                              onSubmit={undefined}>
+                              <h1>
+                                        CREATE THE WIDGET
+                              </h1>
+                              <label
+                                        htmlFor="name">
+                                        Name
+                              </label>
+                              <Field
+                                        className="name"
+                                        component={[Function]}
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        validate={[Function]} />
+                              <label
+                                        htmlFor="description">
+                                        Description
+                              </label>
+                              <Field
+                                        className="description"
+                                        component="input"
+                                        id="description"
+                                        name="description"
+                                        type="text" />
+                              <label
+                                        htmlFor="size">
+                                        Size
+                              </label>
+                              <Field
+                                        className="number"
+                                        component="input"
+                                        id="size"
+                                        name="size"
+                                        type="number" />
+                              <button
+                                        action="submit"
+                                        disabled={false}>
+                                        CREATE
+                              </button>
+                    </form>
+                    <hr />
+                    <div
+                              className="widget-messages">
+                              <Messages
+                                        messages={
+                                                  Array [
+                                                            Object {
+                                                              "test": "success message",
+                                                            },
+                                                          ]
+                                        } />
+                    </div>
+          </div>
+          <div
+                    className="widget-list">
+                    <table>
+                              <thead>
+                                        <tr>
+                                                  <th>
+                                                            Name
+                                                  </th>
+                                                  <th>
+                                                            Description
+                                                  </th>
+                                                  <th>
+                                                            Size
+                                                  </th>
+                                        </tr>
+                              </thead>
+                              <tbody>
+                                        <tr>
+                                                  <td>
+                                                            <strong>
+                                                                      test widget
+                                                            </strong>
+                                                  </td>
+                                                  <td>
+                                                            test
+                                                  </td>
+                                                  <td>
+                                                            1
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+                    <button
+                              onClick={[Function]}>
+                              Refetch Widgets!
+                    </button>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Widgets
+    client={
+        Object {
+            "id": "test",
+            "token": Object {
+              "test": "token",
+            },
+          }
+    }
+    handleSubmit={[Function]}
+    invalid={false}
+    reset={[Function]}
+    widgetCreate={[Function]}
+    widgetRequest={[Function]}
+    widgets={
+        Object {
+            "errors": Array [],
+            "list": Array [
+              Object {
+                "description": "test",
+                "id": "123abc",
+                "name": "test widget",
+                "size": 1,
+              },
+            ],
+            "messages": Array [
+              Object {
+                "test": "success message",
+              },
+            ],
+            "requesting": false,
+            "successful": true,
+          }
+    } />,
+}
+`;
+
+exports[`Widgets Class Component should render requesting message if requesting 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="widgets">
+    <div
+        className="widget-form">
+        <form
+            onSubmit={undefined}>
+            <h1>
+                CREATE THE WIDGET
+            </h1>
+            <label
+                htmlFor="name">
+                Name
+            </label>
+            <Field
+                className="name"
+                component={[Function]}
+                id="name"
+                name="name"
+                type="text"
+                validate={[Function]} />
+            <label
+                htmlFor="description">
+                Description
+            </label>
+            <Field
+                className="description"
+                component="input"
+                id="description"
+                name="description"
+                type="text" />
+            <label
+                htmlFor="size">
+                Size
+            </label>
+            <Field
+                className="number"
+                component="input"
+                id="size"
+                name="size"
+                type="number" />
+            <button
+                action="submit"
+                disabled={false}>
+                CREATE
+            </button>
+        </form>
+        <hr />
+        <div
+            className="widget-messages">
+            <span>
+                Creating widget...
+            </span>
+        </div>
+    </div>
+    <div
+        className="widget-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Size
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>
+                            test widget
+                        </strong>
+                    </td>
+                    <td>
+                        test
+                    </td>
+                    <td>
+                        1
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button
+            onClick={[Function]}>
+            Refetch Widgets!
+        </button>
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="widgets">
+      <div
+            className="widget-form">
+            <form
+                  onSubmit={undefined}>
+                  <h1>
+                        CREATE THE WIDGET
+                  </h1>
+                  <label
+                        htmlFor="name">
+                        Name
+                  </label>
+                  <Field
+                        className="name"
+                        component={[Function]}
+                        id="name"
+                        name="name"
+                        type="text"
+                        validate={[Function]} />
+                  <label
+                        htmlFor="description">
+                        Description
+                  </label>
+                  <Field
+                        className="description"
+                        component="input"
+                        id="description"
+                        name="description"
+                        type="text" />
+                  <label
+                        htmlFor="size">
+                        Size
+                  </label>
+                  <Field
+                        className="number"
+                        component="input"
+                        id="size"
+                        name="size"
+                        type="number" />
+                  <button
+                        action="submit"
+                        disabled={false}>
+                        CREATE
+                  </button>
+            </form>
+            <hr />
+            <div
+                  className="widget-messages">
+                  <span>
+                        Creating widget...
+                  </span>
+            </div>
+      </div>
+      <div
+            className="widget-list">
+            <table>
+                  <thead>
+                        <tr>
+                              <th>
+                                    Name
+                              </th>
+                              <th>
+                                    Description
+                              </th>
+                              <th>
+                                    Size
+                              </th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>
+                                    <strong>
+                                          test widget
+                                    </strong>
+                              </td>
+                              <td>
+                                    test
+                              </td>
+                              <td>
+                                    1
+                              </td>
+                        </tr>
+                  </tbody>
+            </table>
+            <button
+                  onClick={[Function]}>
+                  Refetch Widgets!
+            </button>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Widgets
+        client={
+                Object {
+                        "id": "test",
+                        "token": Object {
+                          "test": "token",
+                        },
+                      }
+        }
+        handleSubmit={[Function]}
+        invalid={false}
+        reset={[Function]}
+        widgetCreate={[Function]}
+        widgetRequest={[Function]}
+        widgets={
+                Object {
+                        "errors": Array [],
+                        "list": Array [
+                          Object {
+                            "description": "test",
+                            "id": "123abc",
+                            "name": "test widget",
+                            "size": 1,
+                          },
+                        ],
+                        "messages": Array [],
+                        "requesting": true,
+                        "successful": false,
+                      }
+        } />,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Widgets {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "fetchWidgets": [Function],
+        "nameRequired": [Function],
+        "props": Object {
+          "client": Object {
+            "id": "test",
+            "token": Object {
+              "test": "token",
+            },
+          },
+          "handleSubmit": [Function],
+          "invalid": false,
+          "reset": [Function],
+          "widgetCreate": [Function],
+          "widgetRequest": [Function],
+          "widgets": Object {
+            "errors": Array [],
+            "list": Array [
+              Object {
+                "description": "test",
+                "id": "123abc",
+                "name": "test widget",
+                "size": 1,
+              },
+            ],
+            "messages": Array [],
+            "requesting": true,
+            "successful": false,
+          },
+        },
+        "refs": Object {},
+        "renderNameInput": [Function],
+        "state": null,
+        "submit": [Function],
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 2,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="widgets">
+          <div
+                    className="widget-form">
+                    <form
+                              onSubmit={undefined}>
+                              <h1>
+                                        CREATE THE WIDGET
+                              </h1>
+                              <label
+                                        htmlFor="name">
+                                        Name
+                              </label>
+                              <Field
+                                        className="name"
+                                        component={[Function]}
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        validate={[Function]} />
+                              <label
+                                        htmlFor="description">
+                                        Description
+                              </label>
+                              <Field
+                                        className="description"
+                                        component="input"
+                                        id="description"
+                                        name="description"
+                                        type="text" />
+                              <label
+                                        htmlFor="size">
+                                        Size
+                              </label>
+                              <Field
+                                        className="number"
+                                        component="input"
+                                        id="size"
+                                        name="size"
+                                        type="number" />
+                              <button
+                                        action="submit"
+                                        disabled={false}>
+                                        CREATE
+                              </button>
+                    </form>
+                    <hr />
+                    <div
+                              className="widget-messages">
+                              <span>
+                                        Creating widget...
+                              </span>
+                    </div>
+          </div>
+          <div
+                    className="widget-list">
+                    <table>
+                              <thead>
+                                        <tr>
+                                                  <th>
+                                                            Name
+                                                  </th>
+                                                  <th>
+                                                            Description
+                                                  </th>
+                                                  <th>
+                                                            Size
+                                                  </th>
+                                        </tr>
+                              </thead>
+                              <tbody>
+                                        <tr>
+                                                  <td>
+                                                            <strong>
+                                                                      test widget
+                                                            </strong>
+                                                  </td>
+                                                  <td>
+                                                            test
+                                                  </td>
+                                                  <td>
+                                                            1
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+                    <button
+                              onClick={[Function]}>
+                              Refetch Widgets!
+                    </button>
+          </div>
+</div>,
+        "_debugID": 4,
+        "_renderedOutput": <div
+          className="widgets">
+          <div
+                    className="widget-form">
+                    <form
+                              onSubmit={undefined}>
+                              <h1>
+                                        CREATE THE WIDGET
+                              </h1>
+                              <label
+                                        htmlFor="name">
+                                        Name
+                              </label>
+                              <Field
+                                        className="name"
+                                        component={[Function]}
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        validate={[Function]} />
+                              <label
+                                        htmlFor="description">
+                                        Description
+                              </label>
+                              <Field
+                                        className="description"
+                                        component="input"
+                                        id="description"
+                                        name="description"
+                                        type="text" />
+                              <label
+                                        htmlFor="size">
+                                        Size
+                              </label>
+                              <Field
+                                        className="number"
+                                        component="input"
+                                        id="size"
+                                        name="size"
+                                        type="number" />
+                              <button
+                                        action="submit"
+                                        disabled={false}>
+                                        CREATE
+                              </button>
+                    </form>
+                    <hr />
+                    <div
+                              className="widget-messages">
+                              <span>
+                                        Creating widget...
+                              </span>
+                    </div>
+          </div>
+          <div
+                    className="widget-list">
+                    <table>
+                              <thead>
+                                        <tr>
+                                                  <th>
+                                                            Name
+                                                  </th>
+                                                  <th>
+                                                            Description
+                                                  </th>
+                                                  <th>
+                                                            Size
+                                                  </th>
+                                        </tr>
+                              </thead>
+                              <tbody>
+                                        <tr>
+                                                  <td>
+                                                            <strong>
+                                                                      test widget
+                                                            </strong>
+                                                  </td>
+                                                  <td>
+                                                            test
+                                                  </td>
+                                                  <td>
+                                                            1
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+                    <button
+                              onClick={[Function]}>
+                              Refetch Widgets!
+                    </button>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Widgets
+    client={
+        Object {
+            "id": "test",
+            "token": Object {
+              "test": "token",
+            },
+          }
+    }
+    handleSubmit={[Function]}
+    invalid={false}
+    reset={[Function]}
+    widgetCreate={[Function]}
+    widgetRequest={[Function]}
+    widgets={
+        Object {
+            "errors": Array [],
+            "list": Array [
+              Object {
+                "description": "test",
+                "id": "123abc",
+                "name": "test widget",
+                "size": 1,
+              },
+            ],
+            "messages": Array [],
+            "requesting": true,
+            "successful": false,
+          }
+    } />,
+}
+`;
+
+exports[`Widgets Class Component should return false if no client is present 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="widgets">
+    <div
+        className="widget-form">
+        <form
+            onSubmit={undefined}>
+            <h1>
+                CREATE THE WIDGET
+            </h1>
+            <label
+                htmlFor="name">
+                Name
+            </label>
+            <Field
+                className="name"
+                component={[Function]}
+                id="name"
+                name="name"
+                type="text"
+                validate={[Function]} />
+            <label
+                htmlFor="description">
+                Description
+            </label>
+            <Field
+                className="description"
+                component="input"
+                id="description"
+                name="description"
+                type="text" />
+            <label
+                htmlFor="size">
+                Size
+            </label>
+            <Field
+                className="number"
+                component="input"
+                id="size"
+                name="size"
+                type="number" />
+            <button
+                action="submit"
+                disabled={false}>
+                CREATE
+            </button>
+        </form>
+        <hr />
+        <div
+            className="widget-messages">
+            
+        </div>
+    </div>
+    <div
+        className="widget-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Size
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>
+                            test widget
+                        </strong>
+                    </td>
+                    <td>
+                        test
+                    </td>
+                    <td>
+                        1
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button
+            onClick={[Function]}>
+            Refetch Widgets!
+        </button>
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="widgets">
+      <div
+            className="widget-form">
+            <form
+                  onSubmit={undefined}>
+                  <h1>
+                        CREATE THE WIDGET
+                  </h1>
+                  <label
+                        htmlFor="name">
+                        Name
+                  </label>
+                  <Field
+                        className="name"
+                        component={[Function]}
+                        id="name"
+                        name="name"
+                        type="text"
+                        validate={[Function]} />
+                  <label
+                        htmlFor="description">
+                        Description
+                  </label>
+                  <Field
+                        className="description"
+                        component="input"
+                        id="description"
+                        name="description"
+                        type="text" />
+                  <label
+                        htmlFor="size">
+                        Size
+                  </label>
+                  <Field
+                        className="number"
+                        component="input"
+                        id="size"
+                        name="size"
+                        type="number" />
+                  <button
+                        action="submit"
+                        disabled={false}>
+                        CREATE
+                  </button>
+            </form>
+            <hr />
+            <div
+                  className="widget-messages">
+                  
+            </div>
+      </div>
+      <div
+            className="widget-list">
+            <table>
+                  <thead>
+                        <tr>
+                              <th>
+                                    Name
+                              </th>
+                              <th>
+                                    Description
+                              </th>
+                              <th>
+                                    Size
+                              </th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>
+                                    <strong>
+                                          test widget
+                                    </strong>
+                              </td>
+                              <td>
+                                    test
+                              </td>
+                              <td>
+                                    1
+                              </td>
+                        </tr>
+                  </tbody>
+            </table>
+            <button
+                  onClick={[Function]}>
+                  Refetch Widgets!
+            </button>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Widgets
+        handleSubmit={[Function]}
+        invalid={false}
+        reset={[Function]}
+        widgetCreate={[Function]}
+        widgetRequest={[Function]}
+        widgets={
+                Object {
+                        "errors": Array [],
+                        "list": Array [
+                          Object {
+                            "description": "test",
+                            "id": "123abc",
+                            "name": "test widget",
+                            "size": 1,
+                          },
+                        ],
+                        "messages": Array [],
+                        "requesting": false,
+                        "successful": false,
+                      }
+        } />,
+      "_debugID": 9,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Widgets {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "fetchWidgets": [Function],
+        "nameRequired": [Function],
+        "props": Object {
+          "handleSubmit": [Function],
+          "invalid": false,
+          "reset": [Function],
+          "widgetCreate": [Function],
+          "widgetRequest": [Function],
+          "widgets": Object {
+            "errors": Array [],
+            "list": Array [
+              Object {
+                "description": "test",
+                "id": "123abc",
+                "name": "test widget",
+                "size": 1,
+              },
+            ],
+            "messages": Array [],
+            "requesting": false,
+            "successful": false,
+          },
+        },
+        "refs": Object {},
+        "renderNameInput": [Function],
+        "state": null,
+        "submit": [Function],
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 5,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="widgets">
+          <div
+                    className="widget-form">
+                    <form
+                              onSubmit={undefined}>
+                              <h1>
+                                        CREATE THE WIDGET
+                              </h1>
+                              <label
+                                        htmlFor="name">
+                                        Name
+                              </label>
+                              <Field
+                                        className="name"
+                                        component={[Function]}
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        validate={[Function]} />
+                              <label
+                                        htmlFor="description">
+                                        Description
+                              </label>
+                              <Field
+                                        className="description"
+                                        component="input"
+                                        id="description"
+                                        name="description"
+                                        type="text" />
+                              <label
+                                        htmlFor="size">
+                                        Size
+                              </label>
+                              <Field
+                                        className="number"
+                                        component="input"
+                                        id="size"
+                                        name="size"
+                                        type="number" />
+                              <button
+                                        action="submit"
+                                        disabled={false}>
+                                        CREATE
+                              </button>
+                    </form>
+                    <hr />
+                    <div
+                              className="widget-messages">
+                              
+                    </div>
+          </div>
+          <div
+                    className="widget-list">
+                    <table>
+                              <thead>
+                                        <tr>
+                                                  <th>
+                                                            Name
+                                                  </th>
+                                                  <th>
+                                                            Description
+                                                  </th>
+                                                  <th>
+                                                            Size
+                                                  </th>
+                                        </tr>
+                              </thead>
+                              <tbody>
+                                        <tr>
+                                                  <td>
+                                                            <strong>
+                                                                      test widget
+                                                            </strong>
+                                                  </td>
+                                                  <td>
+                                                            test
+                                                  </td>
+                                                  <td>
+                                                            1
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+                    <button
+                              onClick={[Function]}>
+                              Refetch Widgets!
+                    </button>
+          </div>
+</div>,
+        "_debugID": 10,
+        "_renderedOutput": <div
+          className="widgets">
+          <div
+                    className="widget-form">
+                    <form
+                              onSubmit={undefined}>
+                              <h1>
+                                        CREATE THE WIDGET
+                              </h1>
+                              <label
+                                        htmlFor="name">
+                                        Name
+                              </label>
+                              <Field
+                                        className="name"
+                                        component={[Function]}
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        validate={[Function]} />
+                              <label
+                                        htmlFor="description">
+                                        Description
+                              </label>
+                              <Field
+                                        className="description"
+                                        component="input"
+                                        id="description"
+                                        name="description"
+                                        type="text" />
+                              <label
+                                        htmlFor="size">
+                                        Size
+                              </label>
+                              <Field
+                                        className="number"
+                                        component="input"
+                                        id="size"
+                                        name="size"
+                                        type="number" />
+                              <button
+                                        action="submit"
+                                        disabled={false}>
+                                        CREATE
+                              </button>
+                    </form>
+                    <hr />
+                    <div
+                              className="widget-messages">
+                              
+                    </div>
+          </div>
+          <div
+                    className="widget-list">
+                    <table>
+                              <thead>
+                                        <tr>
+                                                  <th>
+                                                            Name
+                                                  </th>
+                                                  <th>
+                                                            Description
+                                                  </th>
+                                                  <th>
+                                                            Size
+                                                  </th>
+                                        </tr>
+                              </thead>
+                              <tbody>
+                                        <tr>
+                                                  <td>
+                                                            <strong>
+                                                                      test widget
+                                                            </strong>
+                                                  </td>
+                                                  <td>
+                                                            test
+                                                  </td>
+                                                  <td>
+                                                            1
+                                                  </td>
+                                        </tr>
+                              </tbody>
+                    </table>
+                    <button
+                              onClick={[Function]}>
+                              Refetch Widgets!
+                    </button>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Widgets
+    handleSubmit={[Function]}
+    invalid={false}
+    reset={[Function]}
+    widgetCreate={[Function]}
+    widgetRequest={[Function]}
+    widgets={
+        Object {
+            "errors": Array [],
+            "list": Array [
+              Object {
+                "description": "test",
+                "id": "123abc",
+                "name": "test widget",
+                "size": 1,
+              },
+            ],
+            "messages": Array [],
+            "requesting": false,
+            "successful": false,
+          }
+    } />,
+}
+`;

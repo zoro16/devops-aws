@@ -9,9 +9,9 @@ import Errors from '../notifications/Errors'
 import { widgetCreate, widgetRequest } from './actions'
 
 // Our validation function for `name` field.
-const nameRequired = value => (value ? undefined : 'Name Required')
+// const nameRequired = value => (value ? undefined : 'Name Required')
 
-class Widgets extends Component {
+export class Widgets extends Component {
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     invalid: PropTypes.bool.isRequired,
@@ -36,6 +36,7 @@ class Widgets extends Component {
     this.fetchWidgets()
   }
 
+    nameRequired = value => (value ? undefined : 'Name Required')
   // the helper function for requesting widgets
   // with our client as the parameter
   fetchWidgets = () => {
@@ -109,7 +110,7 @@ class Widgets extends Component {
               id="name"
               className="name"
               component={this.renderNameInput}
-              validate={nameRequired}
+              validate={this.nameRequired}
             />
             <label htmlFor="description">Description</label>
             <Field
@@ -181,7 +182,7 @@ class Widgets extends Component {
 }
 
 // Pull in both the Client and the Widgets state
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   client: state.client,
   widgets: state.widgets,
 })

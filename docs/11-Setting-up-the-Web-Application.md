@@ -63,3 +63,5 @@
   * `touch web/Dockerfile` see the code
   * `docker build -t awsdevops/web`
   * `docker run --name test -d -p 8080:80 awsdevops/web` then check on the browser at `localhost:8080/`
+  * Build NGINX docker image with our `build` folder that has our production ready static files from React App.
+  * Push the docker image from the previous to ECR

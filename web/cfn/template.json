@@ -64,6 +64,21 @@
     "KeyPairName":{
       "Type": "AWS::EC2::KeyPair::KeyName",
       "Description": "Name of an existing EC2 KeyPair to enable SSH access to the ECS instances."
+    },
+    "DesiredCapacity": {
+      "Type": "Number",
+      "Default": "1",
+      "Description": "Number of instances to launch in your ECS cluster."
+    },
+    "MinSize": {
+      "Type": "Number",
+      "Default": "1",
+      "Description": "Minimum number of instances that can be launched in your ECS cluster."
+    },
+    "MaxSize": {
+      "Type": "Number",
+      "Default": "1",
+      "Description": "Maximum number of instances that can be launched in your ECS cluster."
     }
   },
   "Mappings": {
@@ -468,20 +483,101 @@
           }
         ]
       },
+      "CreationPolicy": {
+        "ResourceSignal": {
+          "Count": {
+            "Ref": "DesiredCapacity"
+          },
+          "Timeout": "PT15M"
+        }
+      },
+      "UpdatePolicy": {
+        "AutoScalingReplacingUpdate": {
+          "WillReplace": "true"
+        }
+      }
     },
-    "CreationPolicy": {
-      "ResourceSignal": {
-        "Count": {
-          "Ref": "DesiredCapacity"
+    "WebTaskLogs": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": {
+          "Fn::Join": [
+            "-",
+            [
+              {
+                "Ref": "AWS::StackName"
+              },
+              "WebTaskLogs"
+            ]
+          ]
         },
-        "Timeout": "PT15M"
+        "RetentionInDays": 14
       }
     },
-    "UpdatePolicy": {
-      "AutoScalingReplacingUpdate": {
-        "WillReplace": "true"
+    "WebTaskDefinition": {
+      "Type": "AWS::ECS::TaskDefinition",
+      "Properties": {
+        "Family": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Ref": "AWS::StackName"
+              },
+              "-web-task"
+            ]
+          ]
+        },
+        "ContainerDefinitions": [
+          {
+            "Name": {
+              "Fn::Join": [
+                "",
+                [
+                  {
+                    "Ref": "AWS::StackName"
+                  },
+                  "-web-task-container"
+                ]
+              ]
+            },
+            "Image": {
+              "Ref": "WebTaskImage"
+            },
+            "MemoryReservation": "300",
+            "Cpu": "256",
+            "Essential": true,
+            "PortMappings": [
+              {
+                  "ContainerPort": "80",
+                  "Protocol": "tcp"
+              }
+            ],
+            "LogConfiguration": {
+              "LogDriver": "awslogs",
+              "Options": {
+                "awslogs-group": {
+                  "Ref": "WebTaskLogs"
+                },
+                "awslogs-region": {
+                  "Ref": "AWS::Region"
+                },
+                "awslogs-stream-prefix": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Ref": "AWS::StackName"
+                      },
+                      "-web-task-container"
+                    ]
+                  ]
+                }
+              }
+            }
+          }
+        ]
       }
-    }
   },
   "Outputs": {
     "EcsCluster": {

@@ -196,3 +196,11 @@
     * [CreationPolicy Attribute](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-creationpolicy.html)
     * [UpdatePolicy Attribute](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html)
 
+  * The steps are:
+    1. `AWS::IAM::InstanceProfile`
+    2. `AWS::AutoScaling::LaunchConfiguration`
+    3. `AWS::AutoScaling::AutoScalingGroup`
+
+
+### CloudFormation ECS Task Definition
+  * 

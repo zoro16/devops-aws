@@ -855,3 +855,30 @@
     }
   }
 }
+
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "ecr:*",
+          "ecs:*",
+          "cloudformation:DescribeStack*",
+          "cloudformation:UpdateStack",
+          "ec2:Describe*",
+          "iam:GetRole"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Deny",
+        "Action": [
+          "ecr:Delete*",
+          "ecr:BatchDeleteImage",
+          "ecs:Delete*"
+        ],
+        "Resource": "*"
+      }
+    ]
+  }

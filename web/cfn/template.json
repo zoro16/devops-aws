@@ -79,6 +79,27 @@
       "Type": "Number",
       "Default": "1",
       "Description": "Maximum number of instances that can be launched in your ECS cluster."
+    },
+    "DesiredTaskCount": {
+      "Type": "Number",
+      "Default": "1",
+      "Description": "Desired Count of service tasks to launch in your ECS cluster."
+    },
+    "MinTaskCount": {
+      "Type": "Number",
+      "Default": "1",
+      "Description": "Min Number of service tasks to scale down to."
+    },
+    "MaxTaskCount": {
+      "Type": "Number",
+      "Default": "2",
+      "Description": "Max Number of service tasks to scale up to."
+    },
+    "Autoscale": {
+      "Type": "String",
+      "Default": "true",
+      "AllowedValues": ["true", "false"],
+      "ConstraintDescription":"true or false only"
     }
   },
   "Mappings": {
@@ -100,7 +121,11 @@
       "sa-east-1": {"ID": "ami-49256725"}
     }
   },
-  "Conditions": {},
+  "Conditions": {
+    "CreateAutoScalingResources": {
+      "Fn::Equals": [{ "Ref": "Autoscale" }, "true"]
+    }
+  },
   "Resources": {
     "WebCluster": {
       "Type": "AWS::ECS::Cluster"
@@ -578,6 +603,250 @@
           }
         ]
       }
+    },
+    "WebService": {
+      "Type":"AWS::ECS::Service",
+      "DependsOn":"WebALBListener",
+      "Properties": {
+        "Cluster": {
+          "Ref": "WebCluster"
+        },
+        "DesiredCount": {"Ref": "DesiredTaskCount"},
+        "DeploymentConfiguration":{
+          "MaximumPercent":200,
+          "MinimumHealthyPercent":50
+        },
+        "LoadBalancers": [
+          {
+            "ContainerName": {
+             "Fn::Join": [
+                "",
+                [
+                  {
+                    "Ref": "AWS::StackName"
+                  },
+                  "-web-task-container"
+                ]
+              ]
+            },
+            "ContainerPort": "80",
+            "TargetGroupArn": {
+              "Ref": "WebALBTargetGroup"
+            }
+          }
+        ],
+        "PlacementStrategies": [
+          {
+            "Type": "spread",
+            "Field": "attribute:ecs.availability-zone"
+          },
+          {
+            "Type": "spread",
+            "Field": "instanceId"
+          }
+        ],
+        "Role": {
+          "Ref": "WebServiceRole"
+        },
+        "TaskDefinition": {
+          "Ref": "WebTaskDefinition"
+        }
+      }
+    },
+    "WebServiceCpuAbove40": {
+      "Type":"AWS::CloudWatch::Alarm",
+      "Condition": "CreateAutoScalingResources",
+      "Properties": {
+        "Period": 60,
+        "EvaluationPeriods": 5,
+        "Statistic": "Average",
+        "Threshold": 40,
+        "AlarmDescription": "As our CPU utilization fluctuates around 40",
+        "ComparisonOperator":"GreaterThanThreshold",
+        "AlarmActions": [
+          {
+            "Ref": "WebServiceIncreasePolicy"
+          }
+        ],
+        "Namespace": "AWS/ECS",
+        "Dimensions": [
+          {
+            "Name": "ClusterName",
+            "Value": {
+              "Ref": "WebCluster"
+            }
+          },
+          {
+            "Name": "ServiceName",
+            "Value": {
+              "Fn::GetAtt": [
+                "WebService",
+                "Name"
+              ]
+            }
+          }
+        ],
+        "MetricName": "CPUUtilization"
+      }
+    },
+    "WebServiceIncreasePolicy": {
+      "Type":"AWS::ApplicationAutoScaling::ScalingPolicy",
+      "Condition": "CreateAutoScalingResources",
+      "Properties": {
+        "PolicyName": {
+          "Fn::Join": [
+            "-",
+            [
+              {"Ref": "AWS::StackName"},
+              "WebServiceIncreaseStepPolicy"
+            ]
+          ]
+        },
+        "ScalingTargetId": {
+          "Ref": "WebServiceScalingTarget"
+        },
+        "PolicyType": "StepScaling",
+        "StepScalingPolicyConfiguration": {
+          "AdjustmentType": "ChangeInCapacity",
+          "Cooldown": 300,
+          "MetricAggregationType": "Average",
+          "StepAdjustments": [
+            {
+              "MetricIntervalLowerBound": 0,
+              "MetricIntervalUpperBound": 10,
+              "ScalingAdjustment": 0
+            },
+            {
+              "MetricIntervalLowerBound": 10,
+              "MetricIntervalUpperBound": 20,
+              "ScalingAdjustment": 1
+            },
+            {
+              "MetricIntervalLowerBound": 20,
+              "ScalingAdjustment": 2
+            }
+          ]
+        }
+      }
+    },
+    "WebServiceScalingTarget": {
+      "Type":"AWS::ApplicationAutoScaling::ScalableTarget",
+      "Condition": "CreateAutoScalingResources",
+      "DependsOn":"WebService",
+      "Properties": {
+        "MinCapacity": { "Ref": "MinTaskCount" },
+        "MaxCapacity": { "Ref": "MaxTaskCount" },
+        "ResourceId": {
+          "Fn::Join": [
+            "/",
+            [
+              "service",
+              {
+                "Ref": "WebCluster"
+              },
+              {
+                "Fn::GetAtt": [
+                  "WebService",
+                  "Name"
+                ]
+              }
+            ]
+          ]
+        },
+        "RoleARN": {
+          "Fn::GetAtt": [
+            "WebAutoscalingRole",
+            "Arn"
+          ]
+        },
+        "ScalableDimension": "ecs:service:DesiredCount",
+        "ServiceNamespace": "ecs"
+      }
+    },
+    "WebInstancesCpuAbove50": {
+      "Type": "AWS::CloudWatch::Alarm",
+      "Condition": "CreateAutoScalingResources",
+      "Properties": {
+        "Period": 60,
+        "EvaluationPeriods": 5,
+        "Statistic": "Average",
+        "Threshold": 50,
+        "AlarmDescription": "If our cluster CPU utilization goes above 50",
+        "AlarmActions": [ { "Ref": "WebInstancesScaleUpPolicy" } ],
+        "Namespace": "AWS/ECS",
+        "Dimensions": [
+          {
+            "Name": "ClusterName",
+            "Value": {
+              "Ref": "WebCluster"
+            }
+          }
+        ],
+        "ComparisonOperator": "GreaterThanThreshold",
+        "MetricName": "CPUUtilization"
+      }
+    },
+    "WebInstancesScaleUpPolicy": {
+      "Type": "AWS::AutoScaling::ScalingPolicy",
+      "Condition": "CreateAutoScalingResources",
+      "Condition": "CreateAutoScalingResources",
+      "Properties": {
+        "AdjustmentType" : "ChangeInCapacity",
+        "Cooldown" : 300,
+        "PolicyType": "SimpleScaling",
+        "ScalingAdjustment" : 1,
+        "AutoScalingGroupName" : { "Ref" : "WebAutoscalingGroup" }
+      }
+    },
+    "WebInstancesCpuBelow50": {
+      "Type": "AWS::CloudWatch::Alarm",
+      "Condition": "CreateAutoScalingResources",
+      "Properties": {
+        "Period": 60,
+        "EvaluationPeriods": 5,
+        "Statistic": "Average",
+        "Threshold": 50,
+        "AlarmDescription": "If our cluster CPU utilization goes below 50",
+        "AlarmActions": [ { "Ref": "WebInstancesScaleDownPolicy" } ],
+        "Namespace": "AWS/ECS",
+        "Dimensions": [
+          {
+            "Name": "ClusterName",
+            "Value": {
+              "Ref": "WebCluster"
+            }
+          }
+        ],
+        "ComparisonOperator": "LessThanThreshold",
+        "MetricName": "CPUUtilization"
+      }
+    },
+    "WebInstancesScaleDownPolicy": {
+      "Type": "AWS::AutoScaling::ScalingPolicy",
+      "Condition": "CreateAutoScalingResources",
+      "Properties": {
+        "AdjustmentType" : "ChangeInCapacity",
+        "AutoScalingGroupName" : { "Ref" : "WebAutoscalingGroup" },
+        "PolicyType": "StepScaling",
+        "EstimatedInstanceWarmup" : 300,
+        "StepAdjustments": [
+          {
+            "MetricIntervalLowerBound": -10,
+            "MetricIntervalUpperBound": 0,
+            "ScalingAdjustment": 0
+          },
+          {
+            "MetricIntervalLowerBound": -20,
+            "MetricIntervalUpperBound": -10,
+            "ScalingAdjustment": -1
+          },
+          {
+            "MetricIntervalUpperBound": -20,
+            "ScalingAdjustment": -2
+          }
+        ]
+      }
+    }
   },
   "Outputs": {
     "EcsCluster": {

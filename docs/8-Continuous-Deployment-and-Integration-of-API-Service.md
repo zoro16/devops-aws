@@ -72,7 +72,7 @@ h# Continuous Deployment and Integration of API Service
      * `AWSLOGS_GROUP`:	`xxxxLogs`
      * `AWSLOGS_REGION`: `xxxxst-1`
      * `AWSLOGS_STREAM_PREFIX`:	`xxxxTask`
- 
+     *Note that most of the above variables can be follow in the Task Definition JSON*
 ## Write the CircleCI YML file
   * `mkdir .circleci && cd .circleci`
   * `touch config.yml`

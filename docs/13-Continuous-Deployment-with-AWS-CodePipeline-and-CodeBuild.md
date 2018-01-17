@@ -94,3 +94,9 @@
   * Create a build file `touch web/cfn/build.sh`
     - Inside the `build.sh` we are going to build our new image and push it to ECR
     - and then update CloudFormation
+
+
+#### Creating the CodePipeline and CodeBuild
+  * Go to `CodePipeline`
+    1. `Pipeline name`=> `vpcity-web-pipeline`
+    2. `Source provider` => `GitHub`, `Repository`, then `Branch`

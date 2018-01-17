@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&
+      - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
+      - echo Install Dependancies
+      - yarn
+      - echo Logging into ECR
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  pre_build:
+    commands:
+      - yarn test
+  build:
+    commands:
+      - echo  Building project...
+      - yarn build
+      - echo Building the Image and Configure CFN file...
+      - chmod +x ./cfn/build.sh
+      - ./cfn/build.sh
+  post_build:
+    commands:
+      - echo Build Completed!

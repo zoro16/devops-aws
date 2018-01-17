@@ -70,4 +70,27 @@
   * From the above link we are going to compain the Dockerfiles code for Docker, Node (with the updated versions of the softwares) and will at YARN installation into the file too.
   * Then we will build our image `docker build -t awsdevops/codebuild dockerfils/test/`, then we tag it and push to ECR
   * We need to give CodeBuild the permission to pull this image from ECR
-    - 
+    - `ECS -> Repositories -> awsdevops/codebuild -> Permissions -> Add`
+       1. `Sid`=> `codebuildPullPermissions` this is the statment ID
+       2. `Effect`=> `Allow`
+       3. `Principle`=> `codebuild.amazonaws.com`
+       4. From `Actions` tick `Pull only actions`
+       5. Then click `Save All`
+
+
+#### Build Files for Our Front End App
+  * `touch web/buildspec.yml` see the code
+  * [Docker in Custom Image Sample for AWS CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker-custom-image.html)
+  * [AWS CodeBuild Concepts](https://docs.aws.amazon.com/codebuild/latest/userguide/concepts.html#concepts-how-it-works)
+  * [Build Environment Reference for AWS CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref.html#build-env-ref-env-vars)
+  * We need to have the following commands in our `buildspec.yml` to connect to docker client
+    ```yaml
+    install:
+      commands:
+        - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&
+        - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"
+    ```
+  * [Environment Variables in Build Environments](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html)
+  * Create a build file `touch web/cfn/build.sh`
+    - Inside the `build.sh` we are going to build our new image and push it to ECR
+    - and then update CloudFormation

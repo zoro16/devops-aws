@@ -100,3 +100,5 @@
   * Go to `CodePipeline`
     1. `Pipeline name`=> `vpcity-web-pipeline`
     2. `Source provider` => `GitHub`, `Repository`, then `Branch`
+    
+    [Access Resources in a VPC from AWS CodeBuild Builds](https://aws.amazon.com/blogs/devops/access-resources-in-a-vpc-from-aws-codebuild-builds/)

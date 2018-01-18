@@ -151,29 +151,28 @@
 
 
 #### Bastion Server
-  1.Create a security groups for the bastion server with the following `Inbound Rules`
-     -`Type`=> `ssh`
-     -`Protocol` => `TCP`
-     -`Port Range` => `22`
-     -`Source` => we set it as our current machine's IP e.g. `123.1212.33.212/32`
-  2.Create Key Pair
-  3.Launch an EC2 Instane (AMI)
-  4.`ssh -A ec2-user@<instance ip>`, we're using `-A` option to copy the key to our instance.
+  1. Create a security groups for the bastion server with the following `Inbound Rules`
+     1. `Type`=> `ssh`
+     2. `Protocol` => `TCP`
+     3. `Port Range` => `22`
+     4. `Source` => we set it as our current machine's IP e.g. `123.1212.33.212/32`
+  2. Create Key Pair
+  3. Launch an EC2 Instane (AMI)
+  4. `ssh -A ec2-user@<instance ip>`, we're using `-A` option to copy the key to our instance.
   5. Once we're in:
-     1.`sudo yum update -y`
-     2.`sudo yum install mysql -y`, we need to login to our bastion instance,
+     1. `sudo yum update -y`
+     2. `sudo yum install mysql -y`, we need to login to our bastion instance,
      from here login connect to our RDS server
 
 
 #### IAM Overview
   1. Policies
-    -`Who` do `what` to `which` resourcese. `When` do we care?
-    -`Who` => `principal`, `what` => `actions`, `when` => `conditions`
-    -`Principal` => `user`, `group`, or `role`
+    - `Who` do `what` to `which` resourcese. `When` do we care?
+    - `Who` => `principal`, `what` => `actions`, `when` => `conditions`
+    - `Principal` => `user`, `group`, or `role`
   2. Users
-    -They can't do anything until we attach policies to them.
+    - They can't do anything until we attach policies to them.
   3. Groups
-    -Groups just serve as a delegation for users to share polices
+    - Groups just serve as a delegation for users to share polices
   4. Roles
-    -Roles allow other services, like EC2, to act on other AWS resources
-
+    - Roles allow other services, like EC2, to act on other AWS resources

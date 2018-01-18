@@ -167,12 +167,12 @@
 
 #### IAM Overview
   1. Policies
-    - `Who` do `what` to `which` resourcese. `When` do we care?
-    - `Who` => `principal`, `what` => `actions`, `when` => `conditions`
-    - `Principal` => `user`, `group`, or `role`
+    1. `Who` do `what` to `which` resourcese. `When` do we care?
+    2. `Who` => `principal`, `what` => `actions`, `when` => `conditions`
+    3. `Principal` => `user`, `group`, or `role`
   2. Users
-    - They can't do anything until we attach policies to them.
+    1. They can't do anything until we attach policies to them.
   3. Groups
-    - Groups just serve as a delegation for users to share polices
+    1. Groups just serve as a delegation for users to share polices
   4. Roles
-    - Roles allow other services, like EC2, to act on other AWS resources
+    1. Roles allow other services, like EC2, to act on other AWS resources
